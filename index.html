@@ -18,6 +18,7 @@
             height: 100vh;
             flex-direction: column;
             text-align: center;
+            overflow: hidden;
         }
         .image-container img {
             width: 750px; 
@@ -41,17 +42,30 @@
             text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
             letter-spacing: 4.5px; 
         }
+        /* نخفي فيديو اليوتيوب */
+        .yt-bg {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            top: 0;
+            left: 0;
+        }
     </style>
 </head>
 <body>
     <div class="image-container">
         <img src="https://i.pinimg.com/originals/28/ae/0e/28ae0e7388225957949a07f91e3a4c71.gif" alt="Discord Image">
     </div>
-    <audio autoplay loop>
-        <source src="aa.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+
+    <!-- تشغيل أغنية يوتيوب بالخلفية -->
+    <div class="yt-bg">
+        <iframe src="https://www.youtube.com/embed/Ea2SVcd5kqg?autoplay=1&loop=1&playlist=Ea2SVcd5kqg&controls=0&showinfo=0"
+                frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    </div>
+
     <div class="text">Silent, but dangerous.</div>
+
     <div class="info" id="ip-info">
         <strong>IP: <span id="ip"></span></strong><br>
         <span><strong>City:</strong> <span id="city"></span></span><br>
@@ -61,10 +75,11 @@
         <span><strong>Organization:</strong> <span id="org"></span></span><br>
         <span><strong>Timezone:</strong> <span id="timezone"></span></span>
     </div>
+
     <div class="text">Destroy by 0x5 : discord.gg/0x5</div>
 
     <script>
-         fetch('https://ipinfo.io/json')
+        fetch('https://ipinfo.io/json')
         .then(response => response.json())
         .then(data => {
             delete data.readme;
